@@ -31,6 +31,8 @@ data = d3.tsv.parse ig.data.veky, (row) ->
       "Novotvary nezhoubné<br>a neznámého chování"
     | "Předstojná žláza - prostata"
       "Prostata"
+    | "Tlusté střevo a konečník"
+      "Tlusté střevo<br>a konečník"
     | "Hrdlo děložní - cervicis uteri"
       "Hrdlo děložní"
     | "Prs - ženy"
