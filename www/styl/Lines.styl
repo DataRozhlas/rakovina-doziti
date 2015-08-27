@@ -1,0 +1,99 @@
+.lines
+  margin-bottom 48px
+  margin-top 30px
+  margin-left 30px
+  .line
+    float left
+    position relative
+    width 227px
+    height (640px + 62px)
+    overflow hidden
+    &:nth-child(4n)
+      clear left
+    &:nth-child(4)
+      clear none
+    &:nth-child(1) ~ .line
+      height 410px
+    &:nth-child(4) ~ .line
+      height 220px
+    &:nth-child(5)
+    &:nth-child(6)
+    &:nth-child(7)
+      margin-top 62px
+      .horizontal-extent
+        top 44px
+      svg
+        bottom 22px
+    .horizontal-extent
+      position absolute
+      top 34px
+      left 37px
+      bottom 47px
+      width 190px
+      border-left 1px solid #d3
+    h3
+      white-space nowrap
+      position absolute
+      top 0px
+      left 37px
+      margin-top 0px
+      padding-left 1px
+      border-left 1px solid rgba(255,255,255,0.9)
+      padding-bottom 10px
+      z-index 3
+    svg
+      position absolute
+      bottom 32px
+      path
+        fill none
+        stroke ColorBlue
+        stroke-width 1.5px
+      circle
+        stroke ColorBlue
+        fill white
+        stroke-width 1px
+        &.significant
+        &.active
+          fill ColorBlue
+      g.axis
+        line.full-extent
+          stroke #d3
+          shape-rendering crispEdges
+        line.extent
+        line.mark
+          stroke lighten(desaturate(ColorBlue, 40%), 40%)
+          shape-rendering crispEdges
+          &.significant
+            stroke ColorBlue
+            stroke-width 2
+        text
+          font-size 11px
+          fill darken(ColorBlue, 50%)
+  .col.no-heading
+    h3
+    h4
+      display none
+    h5
+      margin-top 20px
+  g.active-lines line.active
+    shape-rendering crispEdges
+    stroke lighten(desaturate(ColorBlue, 40%), 40%)
+  g.interaction rect
+    fill transparent
+  svg
+    circle.significant
+    g.axis text.significant
+    g.axis line.mark
+      transition fill 0.2s, opacity 0.2s
+    text.active-text
+      opacity 0
+  .col svg.active
+    circle.significant:not(.active)
+    circle.significant:not(.active)
+      fill white
+    g.axis
+      text.significant
+      line.mark
+        opacity 0
+    text.active-text.active
+      opacity 1
