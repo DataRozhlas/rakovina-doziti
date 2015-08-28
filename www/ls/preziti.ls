@@ -36,6 +36,9 @@ container = d3.select ig.containers.base
 element = container.append \div
   ..attr \class \preziti
 
+
+
+
 class PrezitiSlope extends ig.Slope
   _getVoronoiGeneratingPoints: ->
     voronoiGeneratingPoints = []
@@ -53,7 +56,7 @@ slope = new PrezitiSlope element
     y1 = diagnosis.stageTotal.survivals.0.rate
     y2 = diagnosis.stageTotal.survivals.[* - 1].rate
     [y1, y2]
-  ..margin {left: 20, right: 250, top: 50, bottom: 55}
+  ..margin {left: 20, right: 250, top: 100, bottom: 55}
   ..y1Label null
   ..y2Label (gElement) ->
       gElement.append \text
@@ -98,3 +101,75 @@ slope
     slope.highlight null
 
 
+element
+  ..append \h2
+    ..html "Pravděpodobnost přežití většiny druhů rakoviny se zvýšila"
+  ..append \h3
+    ..html "Výjimkou jsou nemoci zjišťované v pozdních stádiích, například rakoviny hrtanu nebo mozku"
+  ..append \div
+    ..attr \class "bar legend"
+    ..append \div
+      ..attr \class "stage stage-I"
+      ..append \div
+        ..attr \class "rate main"
+        ..append \span
+          ..attr \class \label
+          ..html "1. stádium"
+      ..append \div
+        ..attr \class "rate bounds"
+        ..append \div .attr \class "divider divider-1"
+        ..append \div .attr \class "divider divider-2"
+        ..append \div .attr \class "divider divider-3"
+    ..append \div
+      ..attr \class "stage stage-II"
+      ..append \div
+        ..attr \class "rate main"
+        ..append \span
+          ..attr \class \label
+          ..html "2. stádium"
+      ..append \div
+        ..attr \class "rate bounds"
+        ..append \div .attr \class "divider divider-1"
+        ..append \div .attr \class "divider divider-2"
+        ..append \div .attr \class "divider divider-3"
+    ..append \div
+      ..attr \class "stage stage-III"
+      ..append \div
+        ..attr \class "rate main"
+        ..append \span
+          ..attr \class \label
+          ..html "3. stádium"
+      ..append \div
+        ..attr \class "rate bounds"
+        ..append \div .attr \class "divider divider-1"
+        ..append \div .attr \class "divider divider-2"
+        ..append \div .attr \class "divider divider-3"
+    ..append \div
+      ..attr \class "stage stage-IV"
+      ..append \div
+        ..attr \class "rate main"
+        ..append \span
+          ..attr \class \label
+          ..html "4. stádium"
+      ..append \div
+        ..attr \class "rate bounds"
+        ..append \div .attr \class "divider divider-1"
+        ..append \div .attr \class "divider divider-2"
+        ..append \div .attr \class "divider divider-3"
+    ..append \div
+      ..attr \class "stage stage-Celkem"
+      ..append \div
+        ..attr \class "rate main"
+        ..append \span
+          ..attr \class \label
+          ..html "všechna stádia"
+      ..append \div
+        ..attr \class "rate bounds"
+        ..append \div .attr \class "divider divider-1"
+        ..append \div .attr \class "divider divider-2"
+        ..append \div .attr \class "divider divider-3"
+    ..append \div
+      ..attr \class \confidence-extent
+    ..append \span
+      ..attr \class \confidence-label
+      ..html "interval spolehlivosti 95%"

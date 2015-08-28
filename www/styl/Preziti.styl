@@ -8,7 +8,21 @@
   top 0px
   left 0px
   width 610px
-  height 600px
+  height 670px
+  h2
+  h3
+    position absolute
+    left 0px
+    margin 0px
+    transition opacity 0.4s
+  h2
+    top 0px
+    font-size 1.2em
+  h3
+    top 24px
+    font-size 1em
+    color #3
+    font-weight normal
   svg
     g.label line
       stroke #6
@@ -28,7 +42,7 @@
     top 0px
     left 6px
     width (610px - 240px)
-    height 600px
+    height 670px
     .stage
       opacity 1
       transition opacity 0.4s
@@ -42,27 +56,27 @@
         animation fadeIn 0.2s 1 linear
         &.exiting
           opacity 0
-        .rate
-          position absolute
-          width calc(100% - 20px)
-          left 10px
-          transition top 0.4s, left 0.4s, width 0.4s, height 0.4s
-          &.main
-            height 3px
-            margin-top -1px
-            background rgba(ColorBlue, 0.3)
-            .label
-              position absolute
-              width 100%
-              z-index 2
-              text-align center
-              top -7px
-              font-weight 500
-              text-shadow 0px 0px 3px white
-          &.bounds
-            background rgba(ColorBlue, 0.02)
-            border-top 1px dotted rgba(ColorBlue, 0.9)
-            border-bottom 1px dotted rgba(ColorBlue, 0.9)
+      .rate
+        position absolute
+        width calc(100% - 20px)
+        left 10px
+        transition top 0.4s, left 0.4s, width 0.4s, height 0.4s
+        &.main
+          height 3px
+          margin-top -1px
+          background rgba(ColorBlue, 0.3)
+          .label
+            position absolute
+            width 100%
+            z-index 2
+            text-align center
+            top -7px
+            font-weight 500
+            text-shadow 0px 0px 3px white
+        &.bounds
+          background rgba(ColorBlue, 0.02)
+          border-top 1px dotted rgba(ColorBlue, 0.9)
+          border-bottom 1px dotted rgba(ColorBlue, 0.9)
       &.stage-II .divider-1
       &.stage-III .divider-1
       &.stage-III .divider-2
@@ -88,24 +102,24 @@
         left 50%
       &.stage-IV .divider-3
         left 75%
-      &.stage-Celkem .term
+      &.stage-Celkem
         .rate.main
           background rgba(ColorRed, 0.3)
         .rate.bounds
           background rgba(ColorRed, 0.02)
           border-top 1px dotted rgba(ColorRed, 0.9)
           border-bottom 1px dotted rgba(ColorRed, 0.9)
-      &.stage-II .term
+      &.stage-II
         .rate.main
           background rgba(ColorBlue, 0.33)
         .rate.bounds
           background rgba(ColorBlue, 0.06)
-      &.stage-III .term
+      &.stage-III
         .rate.main
           background rgba(ColorBlue, 0.36)
         .rate.bounds
           background rgba(ColorBlue, 0.1)
-      &.stage-IV .term
+      &.stage-IV
         .rate.main
           background rgba(ColorBlue, 0.39)
         .rate.bounds
@@ -117,6 +131,9 @@
       line-height 1em
       font-weight 500
   &.bar-active
+    h2
+    h3
+      opacity 0
     svg.graph
       .lines .line
         line
@@ -126,3 +143,35 @@
         opacity 0
     .bar
       opacity 1
+  .legend.bar
+    z-index 4
+    height 50px
+    width 610px
+    left 0px
+    background white
+    .stage
+      position relative
+      float left
+      height 40px
+      width 90px
+      .rate.main
+        top 24px
+        span.label
+          top 20px
+          line-height 1em
+      .rate.bounds
+        top 14px
+        height 21px
+    .confidence-extent
+      position absolute
+      top 14px
+      left 450px
+      width 4px
+      height 21px
+      border 1px dotted #3
+      border-left 0px
+    .confidence-label
+      position absolute
+      top 15px
+      left 460px
+      font-size 0.9em
