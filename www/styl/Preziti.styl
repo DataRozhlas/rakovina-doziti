@@ -1,5 +1,7 @@
 .preziti
-  position relative
+  position absolute
+  top 0px
+  left 0px
   width 610px
   height 600px
   svg
@@ -9,3 +11,99 @@
     g.label-x1
     g.label-x2
       font-weight bold
+  svg.interactive
+    z-index 2
+
+  .bar
+    opacity 0
+    position absolute
+    top 0px
+    left 6px
+    width (610px - 240px)
+    height 600px
+    .stage
+      .term
+        position absolute
+        .rate
+          position absolute
+          width calc(100% - 20px)
+          left 10px
+          &.main
+            height 3px
+            margin-top -1px
+            background rgba(ColorBlue, 0.3)
+            .label
+              position absolute
+              width 100%
+              z-index 2
+              text-align center
+              top -7px
+              font-weight 500
+              text-shadow 0px 0px 3px white
+          &.bounds
+            background rgba(ColorBlue, 0.02)
+            border-top 1px dotted rgba(ColorBlue, 0.9)
+            border-bottom 1px dotted rgba(ColorBlue, 0.9)
+      &.stage-II .divider-1
+      &.stage-III .divider-1
+      &.stage-III .divider-2
+      &.stage-IV .divider-1
+      &.stage-IV .divider-2
+      &.stage-IV .divider-3
+        position absolute
+        left 50%
+        top -1px
+        bottom -1px
+        width 3px
+        margin-left -1px
+        background white
+        opacity 0.8
+      &.stage-III .divider-1
+      &.stage-III .divider-2
+        left 33%
+        &.divider-2
+          left 66%
+      &.stage-IV .divider-1
+        left 25%
+      &.stage-IV .divider-2
+        left 50%
+      &.stage-IV .divider-3
+        left 75%
+      &.stage-Celkem .term
+        .rate.main
+          background rgba(ColorRed, 0.3)
+        .rate.bounds
+          background rgba(ColorRed, 0.02)
+          border-top 1px dotted rgba(ColorRed, 0.9)
+          border-bottom 1px dotted rgba(ColorRed, 0.9)
+      &.stage-II .term
+        .rate.main
+          background rgba(ColorBlue, 0.33)
+        .rate.bounds
+          background rgba(ColorBlue, 0.06)
+      &.stage-III .term
+        .rate.main
+          background rgba(ColorBlue, 0.36)
+        .rate.bounds
+          background rgba(ColorBlue, 0.1)
+      &.stage-IV .term
+        .rate.main
+          background rgba(ColorBlue, 0.39)
+        .rate.bounds
+          background rgba(ColorBlue, 0.14)
+    .term-label
+      position absolute
+      bottom 0px
+      text-align center
+      line-height 1em
+      font-weight 500
+  &.bar-active
+    svg.graph
+      .lines .line
+        line
+        circle
+          opacity 0
+      .labels-x
+        opacity 0
+    .bar
+      opacity 1

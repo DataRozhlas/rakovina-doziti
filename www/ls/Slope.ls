@@ -76,7 +76,6 @@ class ig.Slope
       ..x (.x)
       ..y (.y)
       ..clipExtent [[0, 0], [@fullWidth, @fullHeight]]
-    console.log @fullHeight
     voronoiPolygons = voronoi voronoiGeneratingPoints
       .filter -> it
     @interactiveContainer.selectAll \path .data voronoiPolygons .enter!append \path

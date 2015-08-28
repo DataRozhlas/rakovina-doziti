@@ -16,6 +16,7 @@ data = d3.tsv.parse ig.data.preziti, (row) ->
     diagnoses.push dg
   dg.addSurvival {termStart, termEnd, stage, survival, survivalLow, survivalHigh}
   row
+
 diagnoses.forEach (.init!)
 
 diagnosesAssoc['Štítná žláza'].yOffset = -5
@@ -49,7 +50,7 @@ slope = new PrezitiSlope element
     y1 = diagnosis.stageTotal.survivals.0.rate
     y2 = diagnosis.stageTotal.survivals.[* - 1].rate
     [y1, y2]
-  ..margin {left: 20, right: 250, top: 30, bottom: 15}
+  ..margin {left: 20, right: 250, top: 50, bottom: 55}
   ..y1Label null
   ..y2Label (gElement) ->
       gElement.append \text
@@ -81,3 +82,17 @@ slope = new PrezitiSlope element
   ..scaleExtent (yValues) -> [0, d3.max yValues]
   ..setData diagnoses
   ..draw!
+
+bar = new ig.Bar slope.element, slope.scale
+
+bar.draw diagnosesAssoc['Dutina ústní a hltan']
+element.classed \bar-active yes
+
+slope
+  ..on \mouseover (diagnosis) ->
+    bar.draw diagnosis
+    element.classed \bar-active yes
+  ..on \mouseout (diagnosis) ->
+    element.classed \bar-active no
+
+

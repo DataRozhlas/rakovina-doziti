@@ -2,7 +2,7 @@ stageIds =
   "I": 0
   "I+II": 0
   "II": 1
-  "III": 1
+  "III": 2
   "IV": 3
   "celkem": null
 
