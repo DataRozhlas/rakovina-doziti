@@ -60,15 +60,15 @@ class ig.Slope
         ..attr \cx (.x2)
         ..attr \cy (.y2)
         ..attr \r 3
-    labelsStart = lines.append \g
+    @labelsStart = lines.append \g
       ..attr \class "label label-start"
       ..attr \transform -> "translate(#{it.x1}, #{it.y1})"
-    labelsEnd = lines.append \g
+    @labelsEnd = lines.append \g
       ..attr \class "label label-end"
       ..attr \transform -> "translate(#{it.x2}, #{it.y2})"
 
-    @y1LabelCb labelsStart if @y1LabelCb
-    @y2LabelCb labelsEnd   if @y2LabelCb
+    @y1LabelCb @labelsStart if @y1LabelCb
+    @y2LabelCb @labelsEnd   if @y2LabelCb
 
   _drawInteractive: ->
     voronoiGeneratingPoints = @_getVoronoiGeneratingPoints!

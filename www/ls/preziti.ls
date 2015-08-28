@@ -45,6 +45,9 @@ class PrezitiSlope extends ig.Slope
       voronoiGeneratingPoints.push {x: (line.x2 + line.x1) / 2, y: (line.y1 + line.y2) / 2, point: line.datum}
     voronoiGeneratingPoints
 
+  highlight: (diagnosis) ->
+    @labelsEnd.classed \active -> it.datum is diagnosis
+
 slope = new PrezitiSlope element
   ..y (diagnosis) ->
     y1 = diagnosis.stageTotal.survivals.0.rate
@@ -89,7 +92,9 @@ slope
   ..on \mouseover (diagnosis) ->
     bar.draw diagnosis
     element.classed \bar-active yes
+    slope.highlight diagnosis
   ..on \mouseout (diagnosis) ->
     element.classed \bar-active no
+    slope.highlight null
 
 
