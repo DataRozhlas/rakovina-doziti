@@ -1,3 +1,8 @@
+@keyframes fadeIn
+  from
+    opacity 0
+  to
+    opacity 1
 .preziti
   position absolute
   top 0px
@@ -25,12 +30,23 @@
     width (610px - 240px)
     height 600px
     .stage
+      opacity 1
+      transition opacity 0.4s
+      animation fadeIn 0.2s 1 linear
+      &.exiting
+        opacity 0
       .term
         position absolute
+        opacity 1
+        transition left 0.4s, width 0.4s, opacity 0.4s
+        animation fadeIn 0.2s 1 linear
+        &.exiting
+          opacity 0
         .rate
           position absolute
           width calc(100% - 20px)
           left 10px
+          transition top 0.4s, left 0.4s, width 0.4s, height 0.4s
           &.main
             height 3px
             margin-top -1px
