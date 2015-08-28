@@ -85,9 +85,6 @@ slope = new PrezitiSlope element
 
 bar = new ig.Bar slope.element, slope.scale
 
-bar.draw diagnosesAssoc['Dutina ústní a hltan']
-element.classed \bar-active yes
-
 slope
   ..on \mouseover (diagnosis) ->
     bar.draw diagnosis
