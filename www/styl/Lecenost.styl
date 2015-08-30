@@ -1,0 +1,43 @@
+.lecenost
+
+  svg.graph
+    g.line
+      > line
+      > circle:first-of-type
+        display none
+    .labels-x
+      display none
+  &.bar-active
+    svg.graph
+      .lines .line
+        line
+        circle
+          opacity 1
+  svg.graph
+  svg.interactive
+    left -50px
+  .bar
+    left -100px
+    .term-labels
+    .stage .term:not(.term-2008)
+        display none
+
+    .stage .rate.bounds
+      .treatment-bar
+      .treatment-label
+        display block
+      .treatment-bar
+        position absolute
+        bottom -1px
+        left -4px
+        width 3px
+        background ColorRed
+      .treatment-label
+        position absolute
+        right 60px
+        text-align right
+        font-size 0.9em
+        top 50%
+        line-height 0.9em
+        transform translate(0, -50%)
+

@@ -13,9 +13,10 @@ externalStyles =
 externalData =
   "preziti": "#__dirname/data/preziti.tsv"
   "veky": "#__dirname/data/veky.tsv"
+  "lecenost": "#__dirname/data/lecenost.tsv"
 
 preferScripts = <[ Bar.js Slope.js Diagnosis.js postInit.js _loadData.js ../data.js init.js _loadExternal.js]>
-deferScripts = <[ geoUtils.js base.js ]>
+deferScripts = <[lecenost.js geoUtils.js base.js ]>
 develOnlyScripts = <[ _loadData.js _loadExternal.js]>
 gzippable = <[ www/index.deploy.html www/script.deploy.js ]>
 safe-deployable =

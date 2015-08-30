@@ -1,7 +1,7 @@
-return unless window.location.hash == '#preziti'
+return unless window.location.hash in ['#preziti' '#lecenost']
 
-diagnosesAssoc = {}
-diagnoses = []
+ig.diagnosesAssoc = diagnosesAssoc = {}
+ig.diagnoses      = diagnoses      = []
 data = d3.tsv.parse ig.data.preziti, (row) ->
   diagnosis = row['Diagnóza, skupina diagnóz']
   [termStart, termEnd] = row['Období'].split "-" .map parseInt _, 10
@@ -15,6 +15,14 @@ data = d3.tsv.parse ig.data.preziti, (row) ->
     diagnosesAssoc[diagnosis] = dg = new ig.Diagnosis diagnosis
     diagnoses.push dg
   dg.addSurvival {termStart, termEnd, stage, survival, survivalLow, survivalHigh}
+  row
+
+data = d3.tsv.parse ig.data.lecenost, (row) ->
+  name = row['Diagnóza']
+  if diagnosesAssoc[name]
+    diagnosesAssoc[name].addTreatment do
+      row['stadium']
+      parseFloat row['2008-2011']
   row
 
 diagnoses.forEach (.init!)
@@ -51,7 +59,7 @@ class PrezitiSlope extends ig.Slope
   highlight: (diagnosis) ->
     @labelsEnd.classed \active -> it.datum is diagnosis
 
-slope = new PrezitiSlope element
+ig.slope = slope = new PrezitiSlope element
   ..y (diagnosis) ->
     y1 = diagnosis.stageTotal.survivals.0.rate
     y2 = diagnosis.stageTotal.survivals.[* - 1].rate
@@ -87,9 +95,10 @@ slope = new PrezitiSlope element
     ..attr \y 14
   ..scaleExtent (yValues) -> [0, d3.max yValues]
   ..setData diagnoses
-  ..draw!
+if window.location.hash is'#preziti'
+  slope.draw!
 
-bar = new ig.Bar slope.element, slope.scale
+ig.bar = bar = new ig.Bar slope.element, slope.scale
 
 slope
   ..on \mouseover (diagnosis) ->

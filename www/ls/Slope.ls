@@ -115,6 +115,8 @@ class ig.Slope
       that.attr \transform "translate(#{@marginObj.left}, #{@marginObj.top + @height})"
     if @x2Label
       that.attr \transform "translate(#{@marginObj.left + @width}, #{@marginObj.top + @height})"
+    if @data
+      @setData @data
 
   _prepareElements: ->
     @element = @parentElement.append \div
