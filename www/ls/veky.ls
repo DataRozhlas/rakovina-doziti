@@ -57,5 +57,5 @@ container.append \div
   ..attr \class \last-words
   ..append \p .html "Všechna čísla vyjadřují počet <b>nově diagnostikovaných nádorů na 100 000 osob ve věkové kategorii</b>. Data jsou z let 2008 – 2012."
   ..append \p .html "Nádory <b>in situ</b> jsou počáteční stádia karcinomu bez vzniku metastáz."
-  ..append \p .html "<b>Hodgkinův lymfom</b> je nádor lymfatické tkáně, např. lymfatických uzlin. <b>Non-Hodgkinův lymfom</b> pak označuje všechny ostatní onemocnění způsobujících rakovinu krve."
+  ..append \p .html "<b>Hodgkinův lymfom</b> je nádor lymfatické tkáně, např. lymfatických uzlin."
   ..append \p .html "<b>Mnohočetný myelom</b> je nádorové onemocnění plazmatických buněk (typ bílých krvinek, které vytvářejí protilátky)."
