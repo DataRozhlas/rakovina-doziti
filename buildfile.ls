@@ -15,7 +15,7 @@ externalData =
   "veky": "#__dirname/data/veky.tsv"
   "lecenost": "#__dirname/data/lecenost.tsv"
 
-preferScripts = <[ Bar.js Lines.js Slope.js Diagnosis.js postInit.js _loadData.js ../data.js init.js _loadExternal.js]>
+preferScripts = <[ Bar.js Lines.js Slope.js Diagnosis.js Events.js postInit.js _loadData.js ../data.js init.js _loadExternal.js]>
 deferScripts = <[lecenost.js geoUtils.js base.js ]>
 develOnlyScripts = <[ _loadData.js _loadExternal.js]>
 gzippable = <[ www/index.deploy.html www/script.deploy.js ]>

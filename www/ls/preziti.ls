@@ -123,7 +123,7 @@ element
         ..attr \class "rate main"
         ..append \span
           ..attr \class \label
-          ..html "1. stádium"
+          ..html "1. stadium"
       ..append \div
         ..attr \class "rate bounds"
         ..append \div .attr \class "divider divider-1"
@@ -135,7 +135,7 @@ element
         ..attr \class "rate main"
         ..append \span
           ..attr \class \label
-          ..html "2. stádium"
+          ..html "2. stadium"
       ..append \div
         ..attr \class "rate bounds"
         ..append \div .attr \class "divider divider-1"
@@ -147,7 +147,7 @@ element
         ..attr \class "rate main"
         ..append \span
           ..attr \class \label
-          ..html "3. stádium"
+          ..html "3. stadium"
       ..append \div
         ..attr \class "rate bounds"
         ..append \div .attr \class "divider divider-1"
@@ -159,7 +159,7 @@ element
         ..attr \class "rate main"
         ..append \span
           ..attr \class \label
-          ..html "4. stádium"
+          ..html "4. stadium"
       ..append \div
         ..attr \class "rate bounds"
         ..append \div .attr \class "divider divider-1"
